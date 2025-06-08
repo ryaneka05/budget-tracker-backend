@@ -7,31 +7,31 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
         month: {
-            type: Sequelize.STRING(25),
+            type: DataTypes.STRING(25),
             allowNull: false,
         },
         year: {
-          type: Sequelize.STRING(4),
+          type: DataTypes.STRING(4),
           allowNull: false,
         },
         total_income: {
-          type: Sequelize.STRING,
+          type: DataTypes.STRING,
           allowNull: false,
         },
         total_expense: {
-          type: Sequelize.STRING,
+          type: DataTypes.STRING,
           allowNull: false,
         },
         balance: {
-          type: Sequelize.STRING,
+          type: DataTypes.STRING,
           allowNull: false,
         },
         ai_summary: {
-          type: Sequelize.TEXT,
+          type: DataTypes.TEXT,
           allowNull: true,
         },
         ai_recomendation: {
-          type: Sequelize.TEXT,
+          type: DataTypes.TEXT,
           allowNull: true,
         },
         user_id: {
