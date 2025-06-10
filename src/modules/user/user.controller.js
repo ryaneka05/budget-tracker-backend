@@ -33,7 +33,7 @@ class UserController {
     async ceate(req, res, next) {
         try {
             const user = await UserService.create(req.body);
-            res.status(200).json({success: true, message: "User Berhasil Dibuat", data: user})
+            res.status(201).json({success: true, message: "User Berhasil Dibuat", data: user})
         } catch (err) {
             next(err)
         }
