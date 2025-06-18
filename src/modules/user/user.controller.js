@@ -18,12 +18,13 @@ class UserController {
 
     async getById(req, res, next) {
         try {
-            const user = await UserService.getById();
+            const userId = req.params.id;
+            const user = await UserService.getById(userId);
             if (!user) throw new NotFound("Data User Belum Ada!");
             res.json({
                 success: true, 
                 message: "User Berhasil Di dapat!", 
-                data: users 
+                data: user
             })
         } catch (err) {
             next(err)

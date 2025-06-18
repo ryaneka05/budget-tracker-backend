@@ -1,6 +1,6 @@
 const { User } = require('../../../models');
 const bcrypt = require('bcrypt');
-const BedRequestError = require('../../errors/BedRequestError');
+const BedRequestError = require('../../errors/BadRequestError');
 const NotFound = require('../../errors/NotFoundError');
 const ServerError = require('../../errors/ServerError');
 

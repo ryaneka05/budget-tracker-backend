@@ -1,7 +1,7 @@
 const { User } = require('../../../models');
 const JwtService = require('./jwt.service');
 const bcrypt = require('bcrypt');
-const BedRequestError = require('../../errors/BedRequestError');
+const BedRequestError = require('../../errors/BadRequestError');
 const NotFound = require('../../errors/NotFoundError');
 
 class AuthService {

@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Trsansaction = sequelize.define('Transaction', {
+    const Transaction = sequelize.define('Transaction', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -24,13 +24,11 @@ module.exports = (sequelize, DataTypes) => {
         },
         user_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            references: { model: 'users', key: 'id' },
+            allowNull: false
         },
         category_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            references: { model: 'categories', key: 'id' },
+            allowNull: false
         },
         created_at: {
             allowNull: false,
@@ -43,15 +41,15 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: DataTypes.NOW,
         },
     }, {
-        tableName: 'transaction',
+        tableName: 'Transactions',
         timestamp: true,
         underscored: true
     });
 
-    Trsansaction.associate = (models) => {
-        Trsansaction.belongsTo(models.User, {foreigenKey: 'user_id', as: 'user'});
-        Trsansaction.belongsTo(models.Category, {foreigenKey: 'category_id', as: 'category'});
+    Transaction.associate = (models) => {
+        Transaction.belongsTo(models.User, {foreigenKey: 'user_id', as: 'user'});
+        Transaction.belongsTo(models.Category, {foreigenKey: 'category_id', as: 'category'});
     };
 
-    return Trsansaction;
+    return Transaction;
 }
