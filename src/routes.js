@@ -4,11 +4,13 @@ const router = express.Router();
 const userRoutes = require('./modules/user/user.route');
 const transactionRoutes = require('./modules/transaction/transaction.route');
 const authRoutes = require('./modules/auth/auth.route');
+const categoryRoutes = require('./modules/category/category.route');
 const NotFound = require('./errors/NotFoundError');
 
 router.use('/auth', authRoutes);
 router.use('/users', userRoutes);
 router.use('/transaction', transactionRoutes);
+router.use('/category', categoryRoutes);
 
 
 router.use((req, res) => {
