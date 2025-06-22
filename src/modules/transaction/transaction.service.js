@@ -1,6 +1,6 @@
 const { Op, where, DATE } = require('sequelize');
 const { Transaction, User, Category } = require('../../../models');
-const { includes } = require('zod/v4');
+const { includes, date } = require('zod/v4');
 const NotFound = require('../../errors/NotFoundError');
 const BadRequestError = require('../../errors/BadRequestError');
 
@@ -14,7 +14,7 @@ class TransactionService {
         if(search){
             whereClause[Op.or] = [
                 {note: { [Op.like]: `%${search}%`}},
-                {desc: { [Op.like]: `%${search}%`}},
+                { '$category.name$': { [Op.like]: `%${search}%` } }
             ]
         }
 
