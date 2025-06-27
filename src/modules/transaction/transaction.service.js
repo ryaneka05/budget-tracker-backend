@@ -182,7 +182,8 @@ class TransactionService {
         const saving = Math.floor(
             Math.max(0, totalIncome - totalExpense) * 0.3 + totalIncome * 0.05
         );
-        
+        // (totalIncome - totalExpense) * 0.3. Nabung 30% dari sisa uang setelah pengeluaran
+        // totalIncome * 0.05. Ditambah 5% dari total pemasukan
         return {
             income: totalIncome,
             expense: totalExpense,
