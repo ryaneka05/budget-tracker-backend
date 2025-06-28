@@ -37,4 +37,8 @@ router.delete('/:id',
     asyncErrorHandler(MonthlySummaryController.delete.bind(MonthlySummaryController))
 )
 
+router.post('/generate',
+    asyncErrorHandler(MonthlySummaryController.generate.bind(MonthlySummaryController))
+)
+
 module.exports = router;

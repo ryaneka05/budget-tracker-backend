@@ -53,6 +53,21 @@ class MonthlySummaryController {
             next(error);
         }
     }
+
+    async generate(req, res, next) {
+        try {
+            const userId = req.userId;
+            const summary = await MonthlySummaryService.generate(userId);
+
+            res.status(201).json({
+                success: true, 
+                message: "Summary Bulanan Berhasil Dibuat", 
+                data : summary
+            });
+        } catch (error) {
+            next(error)
+        }
+    }
 }
 
 module.exports = new MonthlySummaryController();
