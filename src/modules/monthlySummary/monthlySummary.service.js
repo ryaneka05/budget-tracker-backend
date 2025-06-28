@@ -142,6 +142,20 @@ class MonthlySummaryService {
 
          let parsed;
 
+         //By Agrieva
+        //  try {
+        //     const cleaned = content.replace(/```json\s*|\s*```/g,"").trim();
+        //     parsed = JSON.parse(cleaned);
+            
+        //     if(!parsed.summary || !parsed.recommendations || !parsed.trend_analysis) {
+        //         throw new BadRequestError("Struktur JSON tidak lengkap"); 
+        //     }
+        //  } catch (error) {
+        //     throw new BadRequestError("Gagal Mengurai Response JSON dari LLM, Harap Di Coba Lagi!");
+        //  }
+
+
+         // By Ryan
          // kalo ga dapet hasil dari AI nya bisa di cek di sini atau di otak atik di sini. soalnya balikan dari AI nya kadang beda formatnya
          try {
             // untuk menghilangkan karakter ```
